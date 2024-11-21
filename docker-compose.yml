@@ -1,8 +1,11 @@
-version: '3.8'
-
 services:
   app:
-    build: .
+    build: 
+      context: .
+      args:
+        - SECRET=123456
+    environment:
+      - SECRET=123456
     ports:
       - "9169:9169"
     depends_on:

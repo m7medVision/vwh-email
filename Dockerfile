@@ -1,9 +1,12 @@
 FROM node:20-alpine
 
+ARG SECRET
+ENV SECRET=${SECRET}
+
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm install --force
+RUN npm ci --force
 
 COPY . .
 
