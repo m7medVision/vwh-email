@@ -15,6 +15,5 @@ services:
     build: ./mailserver
     environment:
       - ALIAS_DOMAINS=vwh.sh
-      - ALIASES=catchall:|/usr/local/bin/forward-to-webhook.sh
     ports:
       - "25:25"
